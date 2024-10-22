@@ -57,6 +57,7 @@ int main(int argc, char **argv) {
     packet[i] = i % 256;
   }
 
+  strcpy(packet+14,"A1115513");
   /* Send down the packet */
   if (pcap_sendpacket(fp, packet, 100 /* size */) != 0) {
     fprintf(stderr, "\nError sending the packet: %s\n", pcap_geterr(fp));
